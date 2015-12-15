@@ -79,12 +79,12 @@ class Etre_Promomod_CartController extends Mage_Checkout_CartController
                         $this->_getSession()->addError($details);
                         goto beginning_of_response;
                     endif;
-                    echo $couponModel->getData("from_date");
-                    if ($couponModel->getData("from_date")):
+                    /*if ($couponModel->getData("from_date")):
                         $details = $this->__('This coupon code "%s" does not exist or has expired.', Mage::helper('core')->htmlEscape($couponCode));
                         $this->_getSession()->addError($details);
                         goto beginning_of_response;
-                    endif;
+		     endif;
+		     */
                     if ($couponModel->getExpirationDate()):
                         // echo "8";
                         $couponExpirationDate = $couponModel->getExpirationDate();
