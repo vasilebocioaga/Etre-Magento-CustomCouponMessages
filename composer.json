@@ -1,0 +1,8 @@
+{
+  "name": "borasocom-team/Magento-CustomCouponMessages",
+  "type":"magento-module",
+  "require": {
+    "php": ">=5.3",
+    "magento-hackathon/magento-composer-installer": "*"
+  }
+}
