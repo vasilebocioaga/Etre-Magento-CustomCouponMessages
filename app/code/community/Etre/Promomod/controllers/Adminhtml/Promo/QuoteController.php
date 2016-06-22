@@ -18,6 +18,7 @@ class Etre_Promomod_Adminhtml_Promo_QuoteController extends Mage_Adminhtml_Promo
         foreach ($storeMessages as $store => $failedMessage) {
             $failedMessageModel = Mage::getModel("etre_promomod/failedmessages");
             $data["label"] = $failedMessage;
+            $data["label2"] = $failedMessage;
             $data["store_id"] = $store;
             $data["rule_id"] = $ruleId;
             $failedMessageModel->setData($data);
