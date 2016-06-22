@@ -87,7 +87,7 @@
         </routers>
     </admin>
     <adminhtml>
-        <events>
+        <!--<events>
             <adminhtml_controller_salesrule_prepare_save>
                 <observers>
                     <etre_promomod>
@@ -96,7 +96,7 @@
                     </etre_promomod>
                 </observers>
             </adminhtml_controller_salesrule_prepare_save>
-        </events>
+        </events>-->
         <translate>
             <modules>
                 <translations>
