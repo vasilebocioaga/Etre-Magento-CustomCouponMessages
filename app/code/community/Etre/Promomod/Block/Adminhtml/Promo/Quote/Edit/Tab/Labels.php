@@ -21,7 +21,6 @@ class Etre_Promomod_Block_Adminhtml_Promo_Quote_Edit_Tab_Labels extends Mage_Adm
             ->addFieldToFilter('store_id', 0)
             ->addFieldToFilter('rule_id', $rule->getId())
             ->getData();
-
         $fieldset = $form->addFieldset('default_label_fieldset', array(
             'legend' => Mage::helper('salesrule')->__('Default Label')
         ));
@@ -33,17 +32,23 @@ class Etre_Promomod_Block_Adminhtml_Promo_Quote_Edit_Tab_Labels extends Mage_Adm
             'value' => isset($labels[0]) ? $labels[0] : '',
         ));
         $fieldset->addField('promomos_store_default_apply_failed_message', 'text', array(
-            'name' => 'promomod_store_apply_failed_message[0]',
+            'name' => 'promomod_store_apply_failed_message[label][0]',
             'required' => false,
             'label' => Mage::helper('salesrule')->__('Default Message for Failed Coupon'),
             'value' => isset($defaultFailedLabel[0]['label']) ? $defaultFailedLabel[0]['label'] : '',
         ));
 
+        $fieldset->addField('promomos_store_default_apply_failed_message_silog', 'text', array(
+            'name' => 'promomod_store_apply_failed_message[label2][0]',
+            'required' => false,
+            'label' => Mage::helper('salesrule')->__('Default Message for LogIn'),
+            'value' => isset($defaultFailedLabel[0]['label2']) ? $defaultFailedLabel[0]['label2'] : '',
+        ));
         $fieldset->addField('promomos_store_default_apply_failed_message_nolog', 'text', array(
-            'name' => 'promomod_store_apply_failed_message2[0]',
+            'name' => 'promomod_store_apply_failed_message[label3][0]',
             'required' => false,
             'label' => Mage::helper('salesrule')->__('Default Message for not LogIn'),
-            'value' => isset($defaultFailedLabel[0]['label2']) ? $defaultFailedLabel[0]['label2'] : '',
+            'value' => isset($defaultFailedLabel[0]['label3']) ? $defaultFailedLabel[0]['label3'] : '',
         ));
 
         $fieldset = $form->addFieldset('store_labels_fieldset', array(
@@ -85,7 +90,7 @@ class Etre_Promomod_Block_Adminhtml_Promo_Quote_Edit_Tab_Labels extends Mage_Adm
                         ->addFieldToFilter('rule_id', $rule->getId())
                         ->getData();
                     $fieldset->addField("safm_{$store->getId()}", 'text', array(
-                        'name' => 'promomod_store_apply_failed_message[' . $store->getId() . ']',
+                        'name' => 'promomod_store_apply_failed_message[label][' . $store->getId() . ']',
                         'required' => false,
                         'label' => $this->__("Failed coupon label"),
                         'after_element_html' => "<div><small>{$this->__("If coupon fails to apply, this message will override the default.")}</small></div>",
@@ -93,11 +98,19 @@ class Etre_Promomod_Block_Adminhtml_Promo_Quote_Edit_Tab_Labels extends Mage_Adm
                         'fieldset_html_class' => 'store',
                     ));
                        $fieldset->addField("safm2_{$store->getId()}", 'text', array(
-                        'name' => 'promomod_store_apply_failed_message2[' . $store->getId() . ']',
+                        'name' => 'promomod_store_apply_failed_message[label2][' . $store->getId() . ']',
+                        'required' => false,
+                        'label' => $this->__("Failed coupon label Login"),
+                        'after_element_html' => "<div><small>{$this->__("If coupon fails to apply, this message will override the default.")}</small></div>",
+                        'value' => isset($defaultFailedLabel[0]["label2"]) ? $defaultFailedLabel[0]["label2"] : '',
+                        'fieldset_html_class' => 'store',
+                    ));
+                    $fieldset->addField("safm3_{$store->getId()}", 'text', array(
+                        'name' => 'promomod_store_apply_failed_message[label3][' . $store->getId() . ']',
                         'required' => false,
                         'label' => $this->__("Failed coupon label no Login"),
                         'after_element_html' => "<div><small>{$this->__("If coupon fails to apply, this message will override the default.")}</small></div>",
-                        'value' => isset($defaultFailedLabel[0]["label2"]) ? $defaultFailedLabel[0]["label2"] : '',
+                        'value' => isset($defaultFailedLabel[0]["label3"]) ? $defaultFailedLabel[0]["label3"] : '',
                         'fieldset_html_class' => 'store',
                     ));
                 }

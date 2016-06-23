@@ -7,6 +7,7 @@ class Etre_Promomod_Adminhtml_Promo_QuoteController extends Mage_Adminhtml_Promo
 
     private function insertFailedLabels($ruleId)
     {
+
         $storeMessages = $this->getRequest()->getParam("promomod_store_apply_failed_message");
         if (!empty($existingRuleLabels = Mage::getModel('etre_promomod/failedmessages')->getCollection()
             ->addFieldToFilter('rule_id', $ruleId))
@@ -15,15 +16,18 @@ class Etre_Promomod_Adminhtml_Promo_QuoteController extends Mage_Adminhtml_Promo
                 $failedLabel->delete();
             endforeach;
         endif;
-        foreach ($storeMessages as $store => $failedMessage) {
+        $keys = array_keys($storeMessages);
+        foreach ($storeMessages[$keys[0]] as $store => $failedMessage) {
             $failedMessageModel = Mage::getModel("etre_promomod/failedmessages");
-            $data["label"] = $failedMessage;
-            $data["label2"] = $failedMessage;
+            foreach ($keys as $key) {
+                $data[$key] = (isset($storeMessages[$key][$store])) ? $storeMessages[$key][$store] : null;
+            }
             $data["store_id"] = $store;
             $data["rule_id"] = $ruleId;
             $failedMessageModel->setData($data);
             $failedMessageModel->save();
         }
+
     }
 
     private function deleteFailedLabels($ruleId)
