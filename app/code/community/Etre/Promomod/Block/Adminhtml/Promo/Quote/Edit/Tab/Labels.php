@@ -77,7 +77,7 @@ class Etre_Promomod_Block_Adminhtml_Promo_Quote_Edit_Tab_Labels extends Mage_Adm
                         'name' => 'store_labels[' . $store->getId() . ']',
                         'required' => false,
                         'label' => $store->getName(),
-                        'after_element_html' => "<div><small>{$this->__("If coupon fails to apply, default message.")}</small></div>",
+                        'after_element_html' => "<div><small>{$this->__("Message Cart Checkout.")}</small></div>",
                         'value' => isset($labels[$store->getId()]) ? $labels[$store->getId()] : '',
                         'fieldset_html_class' => 'store',
                     ));
