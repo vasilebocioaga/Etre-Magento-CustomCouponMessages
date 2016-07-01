@@ -51,7 +51,7 @@
                 </connection>
             </promomod_setup>
         </resources>
-        <events>
+        <!--<events>
             <salesrule_validator_process>
                 <observers>
                     <etre_promomod>
@@ -60,7 +60,7 @@
                     </etre_promomod>
                 </observers>
             </salesrule_validator_process>
-        </events>
+        </events>-->
     </global>
     <frontend>
         <routers>
