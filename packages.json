@@ -1,0 +1,19 @@
+{
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "tylerofathenry/Magento-CustomCouponMessages",
+                "version": "dev-master",
+                "source": {
+                    "url": "https://github.com/tylerofathenry/Magento-CustomCouponMessages",
+                    "type": "git",
+                    "reference": "origin/master"
+                }
+            }
+        }
+    ],
+    "require": {
+       
+    }
+}
