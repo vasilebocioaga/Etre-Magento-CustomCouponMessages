@@ -3,10 +3,10 @@
         {
             "type": "package",
             "package": {
-                "name": "tylerofathenry/Magento-CustomCouponMessages",
-                "version": "dev-master",
+                "name": "RenjunLiu/Magento-CustomCouponMessages",
+                "version": "master",
                 "source": {
-                    "url": "https://github.com/tylerofathenry/Magento-CustomCouponMessages",
+                    "url": "https://github.com/RenjunLiu/Magento-CustomCouponMessages",
                     "type": "git",
                     "reference": "origin/master"
                 }
