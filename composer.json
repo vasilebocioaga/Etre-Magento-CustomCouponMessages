@@ -1,0 +1,19 @@
+{
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "RenjunLiu/Magento-CustomCouponMessages",
+                "version": "master",
+                "source": {
+                    "url": "https://github.com/RenjunLiu/Magento-CustomCouponMessages",
+                    "type": "git",
+                    "reference": "origin/master"
+                }
+            }
+        }
+    ],
+    "require": {
+       "RenjunLiu/Magento-CustomCouponMessages"
+    }
+}
