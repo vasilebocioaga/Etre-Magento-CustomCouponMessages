@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Etre_Promomod>
-            <version>0.1.0</version>
+            <version>0.1.1</version>
         </Etre_Promomod>
     </modules>
     <global>
@@ -51,7 +51,7 @@
                 </connection>
             </promomod_setup>
         </resources>
-        <events>
+        <!--<events>
             <salesrule_validator_process>
                 <observers>
                     <etre_promomod>
@@ -60,7 +60,7 @@
                     </etre_promomod>
                 </observers>
             </salesrule_validator_process>
-        </events>
+        </events>-->
     </global>
     <frontend>
         <routers>
@@ -87,7 +87,7 @@
         </routers>
     </admin>
     <adminhtml>
-        <events>
+        <!--<events>
             <adminhtml_controller_salesrule_prepare_save>
                 <observers>
                     <etre_promomod>
@@ -96,7 +96,7 @@
                     </etre_promomod>
                 </observers>
             </adminhtml_controller_salesrule_prepare_save>
-        </events>
+        </events>-->
         <translate>
             <modules>
                 <translations>
