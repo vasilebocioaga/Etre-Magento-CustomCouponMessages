@@ -1,5 +1,5 @@
 {
-  "name": "borasocom-team/Magento-CustomCouponMessages",
+  "name": "etre/Magento-CustomCouponMessages",
   "type":"magento-module",
   "require": {
     "php": ">=5.3",
